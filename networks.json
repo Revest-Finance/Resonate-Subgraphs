@@ -1,0 +1,8 @@
+{
+  "mainnet": {
+    "Resonate": {
+      "address": "0x80CA847618030Bc3e26aD2c444FD007279DaF50A",
+      "startBlock": 15655656
+    }
+  }
+}

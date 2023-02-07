@@ -1,0 +1,72 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Resonate
+    network: mainnet
+    source:
+      address: "0x80CA847618030Bc3e26aD2c444FD007279DaF50A"
+      abi: Resonate
+      startBlock: 15655656
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - BatchInterestClaimed
+        - CapitalActivated
+        - DepositERC20OutputReceiver
+        - DequeueConsumer
+        - DequeueProvider
+        - EnqueueConsumer
+        - EnqueueProvider
+        - FNFTCreation
+        - FNFTRedeemed
+        - FeeCollection
+        - InterestClaimed
+        - OracleRegistered
+        - OrderWithdrawal
+        - OwnershipTransferred
+        - PoolCreated
+        - VaultAdapterRegistered
+        - WithdrawERC20OutputReceiver
+      abis:
+        - name: Resonate
+          file: ./abis/Resonate.json
+      eventHandlers:
+        - event: BatchInterestClaimed(indexed bytes32,uint256[],indexed address,uint256)
+          handler: handleBatchInterestClaimed
+        - event: CapitalActivated(indexed bytes32,uint256,indexed uint256)
+          handler: handleCapitalActivated
+        - event: DepositERC20OutputReceiver(indexed address,indexed address,uint256,indexed uint256,bytes)
+          handler: handleDepositERC20OutputReceiver
+        - event: DequeueConsumer(indexed bytes32,indexed address,indexed address,uint64,(uint256,uint256,bytes32))
+          handler: handleDequeueConsumer
+        - event: DequeueProvider(indexed bytes32,indexed address,indexed address,uint64,(uint256,uint256,bytes32))
+          handler: handleDequeueProvider
+        - event: EnqueueConsumer(indexed bytes32,indexed address,indexed uint64,bool,(uint256,uint256,bytes32))
+          handler: handleEnqueueConsumer
+        - event: EnqueueProvider(indexed bytes32,indexed address,indexed uint64,bool,(uint256,uint256,bytes32))
+          handler: handleEnqueueProvider
+        - event: FNFTCreation(indexed bytes32,indexed bool,indexed uint256,uint256)
+          handler: handleFNFTCreation
+        - event: FNFTRedeemed(indexed bytes32,indexed bool,indexed uint256,uint256)
+          handler: handleFNFTRedeemed
+        - event: FeeCollection(indexed bytes32,uint256)
+          handler: handleFeeCollection
+        - event: InterestClaimed(indexed bytes32,indexed uint256,indexed address,uint256)
+          handler: handleInterestClaimed
+        - event: OracleRegistered(indexed address,indexed address,indexed address)
+          handler: handleOracleRegistered
+        - event: OrderWithdrawal(indexed bytes32,uint256,bool,address)
+          handler: handleOrderWithdrawal
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: PoolCreated(indexed bytes32,indexed address,indexed address,address,uint128,uint128,uint32,uint256,bool,string,address)
+          handler: handlePoolCreated
+        - event: VaultAdapterRegistered(indexed address,indexed address,indexed address)
+          handler: handleVaultAdapterRegistered
+        - event: WithdrawERC20OutputReceiver(indexed address,indexed address,uint256,indexed uint256,bytes)
+          handler: handleWithdrawERC20OutputReceiver
+      file: ./src/resonate.ts

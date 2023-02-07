@@ -1,0 +1,200 @@
+type BatchInterestClaimed @entity(immutable: true) {
+  id: Bytes!
+  poolId: Bytes! # bytes32
+  fnftIds: [BigInt]! # uint256[]
+  claimer: Bytes! # address
+  amountInterest: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CapitalActivated @entity(immutable: true) {
+  id: Bytes!
+  poolId: Bytes! # bytes32
+  numPackets: BigInt! # uint256
+  principalFNFT: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DepositERC20OutputReceiver @entity(immutable: true) {
+  id: Bytes!
+  mintTo: Bytes! # address
+  token: Bytes! # address
+  amountTokens: BigInt! # uint256
+  fnftId: BigInt! # uint256
+  extraData: Bytes! # bytes
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DequeueConsumer @entity(immutable: true) {
+  id: Bytes!
+  poolId: Bytes! # bytes32
+  dequeuer: Bytes! # address
+  owner: Bytes! # address
+  position: BigInt! # uint64
+  order_packetsRemaining: BigInt! # uint256
+  order_depositedShares: BigInt! # uint256
+  order_owner: Bytes! # bytes32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DequeueProvider @entity(immutable: true) {
+  id: Bytes!
+  poolId: Bytes! # bytes32
+  dequeuer: Bytes! # address
+  owner: Bytes! # address
+  position: BigInt! # uint64
+  order_packetsRemaining: BigInt! # uint256
+  order_depositedShares: BigInt! # uint256
+  order_owner: Bytes! # bytes32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type EnqueueConsumer @entity(immutable: true) {
+  id: Bytes!
+  poolId: Bytes! # bytes32
+  addr: Bytes! # address
+  position: BigInt! # uint64
+  shouldFarm: Boolean! # bool
+  order_packetsRemaining: BigInt! # uint256
+  order_depositedShares: BigInt! # uint256
+  order_owner: Bytes! # bytes32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type EnqueueProvider @entity(immutable: true) {
+  id: Bytes!
+  poolId: Bytes! # bytes32
+  addr: Bytes! # address
+  position: BigInt! # uint64
+  shouldFarm: Boolean! # bool
+  order_packetsRemaining: BigInt! # uint256
+  order_depositedShares: BigInt! # uint256
+  order_owner: Bytes! # bytes32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FNFTCreation @entity(immutable: true) {
+  id: Bytes!
+  poolId: Bytes! # bytes32
+  isPrincipal: Boolean! # bool
+  fnftId: BigInt! # uint256
+  quantityFNFTs: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FNFTRedeemed @entity(immutable: true) {
+  id: Bytes!
+  poolId: Bytes! # bytes32
+  isPrincipal: Boolean! # bool
+  fnftId: BigInt! # uint256
+  quantityFNFTs: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FeeCollection @entity(immutable: true) {
+  id: Bytes!
+  poolId: Bytes! # bytes32
+  amountTokens: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type InterestClaimed @entity(immutable: true) {
+  id: Bytes!
+  poolId: Bytes! # bytes32
+  fnftId: BigInt! # uint256
+  claimer: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OracleRegistered @entity(immutable: true) {
+  id: Bytes!
+  vaultAsset: Bytes! # address
+  paymentAsset: Bytes! # address
+  oracleDispatch: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OrderWithdrawal @entity(immutable: true) {
+  id: Bytes!
+  poolId: Bytes! # bytes32
+  amountPackets: BigInt! # uint256
+  fullyWithdrawn: Boolean! # bool
+  owner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PoolCreated @entity(immutable: true) {
+  id: Bytes!
+  poolId: Bytes! # bytes32
+  asset: Bytes! # address
+  vault: Bytes! # address
+  payoutAsset: Bytes! # address
+  rate: BigInt! # uint128
+  addInterestRate: BigInt! # uint128
+  lockupPeriod: BigInt! # uint32
+  packetSize: BigInt! # uint256
+  isFixedTerm: Boolean! # bool
+  poolName: String! # string
+  creator: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type VaultAdapterRegistered @entity(immutable: true) {
+  id: Bytes!
+  underlyingVault: Bytes! # address
+  vaultAdapter: Bytes! # address
+  vaultAsset: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type WithdrawERC20OutputReceiver @entity(immutable: true) {
+  id: Bytes!
+  caller: Bytes! # address
+  token: Bytes! # address
+  amountTokens: BigInt! # uint256
+  fnftId: BigInt! # uint256
+  extraData: Bytes! # bytes
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
