@@ -4,5 +4,29 @@
       "address": "0x80CA847618030Bc3e26aD2c444FD007279DaF50A",
       "startBlock": 15655656
     }
+  },
+  "optimism": {
+    "Resonate": {
+      "address": "0x80CA847618030Bc3e26aD2c444FD007279DaF50A",
+      "startBlock": 26379632
+    }
+  },
+  "arbitrum-one": {
+    "Resonate": {
+      "address": "0x80CA847618030Bc3e26aD2c444FD007279DaF50A",
+      "startBlock": 27506229	
+    }
+  },
+  "fantom": {
+    "Resonate": {
+      "address": "0x80CA847618030Bc3e26aD2c444FD007279DaF50A",
+      "startBlock": 48025218	
+    }
+  },
+  "matic": {
+    "Resonate": {
+      "address": "0x6ECB87A158c41d21c82C65B2D8a67Ea435804f64",
+      "startBlock": 33740852	
+    }
   }
 }
