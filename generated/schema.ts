@@ -1798,3 +1798,168 @@ export class WithdrawERC20OutputReceiver extends Entity {
     this.set("transactionHash", Value.fromBytes(value));
   }
 }
+
+export class PriceProviderOwnershipTransferred extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set("id", Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id = this.get("id");
+    assert(
+      id != null,
+      "Cannot save PriceProviderOwnershipTransferred entity without an ID"
+    );
+    if (id) {
+      assert(
+        id.kind == ValueKind.BYTES,
+        `Entities of type PriceProviderOwnershipTransferred must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+      );
+      store.set(
+        "PriceProviderOwnershipTransferred",
+        id.toBytes().toHexString(),
+        this
+      );
+    }
+  }
+
+  static load(id: Bytes): PriceProviderOwnershipTransferred | null {
+    return changetype<PriceProviderOwnershipTransferred | null>(
+      store.get("PriceProviderOwnershipTransferred", id.toHexString())
+    );
+  }
+
+  get id(): Bytes {
+    let value = this.get("id");
+    return value!.toBytes();
+  }
+
+  set id(value: Bytes) {
+    this.set("id", Value.fromBytes(value));
+  }
+
+  get previousOwner(): Bytes {
+    let value = this.get("previousOwner");
+    return value!.toBytes();
+  }
+
+  set previousOwner(value: Bytes) {
+    this.set("previousOwner", Value.fromBytes(value));
+  }
+
+  get newOwner(): Bytes {
+    let value = this.get("newOwner");
+    return value!.toBytes();
+  }
+
+  set newOwner(value: Bytes) {
+    this.set("newOwner", Value.fromBytes(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value = this.get("blockNumber");
+    return value!.toBigInt();
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set("blockNumber", Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value = this.get("blockTimestamp");
+    return value!.toBigInt();
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set("blockTimestamp", Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value = this.get("transactionHash");
+    return value!.toBytes();
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set("transactionHash", Value.fromBytes(value));
+  }
+}
+
+export class SetTokenOracle extends Entity {
+  constructor(id: Bytes) {
+    super();
+    this.set("id", Value.fromBytes(id));
+  }
+
+  save(): void {
+    let id = this.get("id");
+    assert(id != null, "Cannot save SetTokenOracle entity without an ID");
+    if (id) {
+      assert(
+        id.kind == ValueKind.BYTES,
+        `Entities of type SetTokenOracle must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+      );
+      store.set("SetTokenOracle", id.toBytes().toHexString(), this);
+    }
+  }
+
+  static load(id: Bytes): SetTokenOracle | null {
+    return changetype<SetTokenOracle | null>(
+      store.get("SetTokenOracle", id.toHexString())
+    );
+  }
+
+  get id(): Bytes {
+    let value = this.get("id");
+    return value!.toBytes();
+  }
+
+  set id(value: Bytes) {
+    this.set("id", Value.fromBytes(value));
+  }
+
+  get token(): Bytes {
+    let value = this.get("token");
+    return value!.toBytes();
+  }
+
+  set token(value: Bytes) {
+    this.set("token", Value.fromBytes(value));
+  }
+
+  get oracle(): Bytes {
+    let value = this.get("oracle");
+    return value!.toBytes();
+  }
+
+  set oracle(value: Bytes) {
+    this.set("oracle", Value.fromBytes(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value = this.get("blockNumber");
+    return value!.toBigInt();
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set("blockNumber", Value.fromBigInt(value));
+  }
+
+  get blockTimestamp(): BigInt {
+    let value = this.get("blockTimestamp");
+    return value!.toBigInt();
+  }
+
+  set blockTimestamp(value: BigInt) {
+    this.set("blockTimestamp", Value.fromBigInt(value));
+  }
+
+  get transactionHash(): Bytes {
+    let value = this.get("transactionHash");
+    return value!.toBytes();
+  }
+
+  set transactionHash(value: Bytes) {
+    this.set("transactionHash", Value.fromBytes(value));
+  }
+}

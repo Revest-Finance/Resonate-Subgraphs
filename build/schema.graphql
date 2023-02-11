@@ -198,3 +198,20 @@ type WithdrawERC20OutputReceiver @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+type PriceProviderOwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SetTokenOracle @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  oracle: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
