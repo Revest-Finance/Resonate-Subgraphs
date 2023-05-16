@@ -7,6 +7,10 @@
     "PriceProvider": {
       "address": "0x0F89ba3F140Ea9370aB05d434B8e32fDf41a6093",
       "startBlock": 15655656
+    },
+    "FnftHandler": {
+      "address": "0xA6f5efC3499d41fF1Eca9d325cfe13C913a85F45",
+      "startBlock": 14782471
     }
   },
   "optimism": {
@@ -15,9 +19,13 @@
       "startBlock": 26379632
     },
     "PriceProvider": {
-        "address": "0x0F89ba3F140Ea9370aB05d434B8e32fDf41a6093",
-        "startBlock": 26379632
-      }
+      "address": "0x0F89ba3F140Ea9370aB05d434B8e32fDf41a6093",
+      "startBlock": 26379632
+    },
+    "FnftHandler": {
+      "address": "0xA002Dc3E3C163732F4F5e6F941C87b61B5Afca74",
+      "startBlock": 25603789
+    }
   },
   "arbitrum-one": {
     "Resonate": {
@@ -25,9 +33,13 @@
       "startBlock": 27506229
     },
     "PriceProvider": {
-        "address": "0x0F89ba3F140Ea9370aB05d434B8e32fDf41a6093",
-        "startBlock": 27506229
-      }
+      "address": "0x0F89ba3F140Ea9370aB05d434B8e32fDf41a6093",
+      "startBlock": 27506229
+    },
+    "FnftHandler": {
+      "address": "0xd90D465631a1718FDB3eA64C39F41290Addf70da",
+      "startBlock": 26904884
+    }
   },
   "fantom": {
     "Resonate": {
@@ -35,9 +47,13 @@
       "startBlock": 48025218
     },
     "PriceProvider": {
-        "address": "0x0F89ba3F140Ea9370aB05d434B8e32fDf41a6093",
-        "startBlock": 48025218
-      }
+      "address": "0x0F89ba3F140Ea9370aB05d434B8e32fDf41a6093",
+      "startBlock": 48025218
+    },
+    "FnftHandler": {
+      "address": "0xA6f5efC3499d41fF1Eca9d325cfe13C913a85F45",
+      "startBlock": 47655252
+    }
   },
   "matic": {
     "Resonate": {
@@ -45,8 +61,12 @@
       "startBlock": 33740852
     },
     "PriceProvider": {
-        "address": "0xDe953B2826AD2df2706829bBAe860b17330334df",
-        "startBlock": 33740852
-      }
+      "address": "0xDe953B2826AD2df2706829bBAe860b17330334df",
+      "startBlock": 33740852
+    },
+    "FnftHandler": {
+      "address": "0x6c111d0b0C5f6577DE586F7Df262f15a6741ddb7",
+      "startBlock": 28208453
+    }
   }
 }
